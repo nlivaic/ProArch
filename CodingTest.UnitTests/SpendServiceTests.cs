@@ -159,25 +159,5 @@ namespace ProArch.CodingTest.UnitTests
             result.Years.First().Year.Should().Be(2022);
             result.Years.First().TotalSpend.Should().Be(200);
         }
-
-        [Fact]
-        public void GetTotalSpend_TwoExternalSuppliers_FromFailoverRepository_GetsSummarizedSuccessfully()
-        {
-            // Arrange
-
-            // Act
-
-            // Assert
-        }
-
-        [Fact]
-        public void GetTotalSpend_TwoExternalSuppliers_FromFailoverRepository_OnlyFreshDataGetsSummarizedSuccessfully()
-        {
-            // Arrange
-
-            // Act
-
-            // Assert
-        }
     }
 }
