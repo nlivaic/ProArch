@@ -4,6 +4,7 @@
 * I did use interfaces for repository classes so I can return fake data.
 * External SDK is hidden behind an interface so we don't have a direct dependency on external code.
 * External service and failover have another class behind which they are hidden (`ExternalSupplierInvoiceService`). This class also should use Polly with a Circuit Breaker to handle resilience, but I didn't manage to get to it.
+* `FailoverInvoiceService` uses `FailoverInvoiceOptions` to know where is the cutoff for stale data. If it encounters stale data it throws.
 * A UML diagram is attached describing classes.
 
 ## Unit tests
