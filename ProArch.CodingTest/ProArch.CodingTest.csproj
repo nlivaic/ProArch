@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>ProArch.CodingTest</AssemblyName>
+    <RootNamespace>ProArch.CodingTest</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Polly" Version="7.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <ProjectReference Include="..\ProArch.CodingTest.External\ProArch.CodingTest.External.csproj" />
+  </ItemGroup>
+
+</Project>
