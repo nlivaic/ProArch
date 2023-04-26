@@ -11,7 +11,8 @@
 
 * Tests rely heavily on various builders to manage complexity of arranging a test case.
 * I ran a test coverage analysis and have included the results below. Repositories haven't been covered at all, but those would need integration tests (Sqlite, EF Core in-memory provider or even Testcontainers).
-(https://user-images.githubusercontent.com/26722936/234726963-3e6f5eaf-71b1-4a61-ba67-d9e91c6095fc.png)
+![2023-04-27 01_35_39-CodingTest - Microsoft Visual Studio](https://user-images.githubusercontent.com/26722936/234726963-3e6f5eaf-71b1-4a61-ba67-d9e91c6095fc.png)
+
 
 ## Resilience
 
