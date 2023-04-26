@@ -6,12 +6,12 @@ namespace ProArch.CodingTest.Summary
 {
     public class SpendService
     {
-        private readonly ISupplierService _supplierService;
-        private readonly IInvoiceServiceFactory _invoiceServiceFactory;
+        private readonly SupplierService _supplierService;
+        private readonly InvoiceServiceFactory _invoiceServiceFactory;
 
         public SpendService(
-            ISupplierService supplierService,
-            IInvoiceServiceFactory invoiceServiceFactory)
+            SupplierService supplierService,
+            InvoiceServiceFactory invoiceServiceFactory)
         {
             _supplierService = supplierService;
             _invoiceServiceFactory = invoiceServiceFactory;

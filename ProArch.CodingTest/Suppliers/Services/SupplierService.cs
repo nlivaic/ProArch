@@ -3,7 +3,7 @@ using ProArch.CodingTest.Suppliers.Repository;
 
 namespace ProArch.CodingTest.Suppliers.Services
 {
-    public class SupplierService : ISupplierService
+    public class SupplierService
     {
         private readonly ISupplierRepository _supplierRepository;
 

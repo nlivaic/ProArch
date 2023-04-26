@@ -1,10 +1,11 @@
 ﻿using ProArch.CodingTest.Exceptions;
 using ProArch.CodingTest.Invoices.Repository;
 using System;
+using System.Collections.Generic;
 
 namespace ProArch.CodingTest.Invoices.Service.External
 {
-    public class FailoverInvoiceService : IFailoverInvoiceService
+    public class FailoverInvoiceService
     {
         private readonly IFailoverInvoiceRepository _failoverInvoiceRepository;
         private readonly FailoverInvoiceOptions _failoverInvoiceOptions;
@@ -15,18 +16,18 @@ namespace ProArch.CodingTest.Invoices.Service.External
             _failoverInvoiceOptions = failoverInvoiceOptions;
         }
 
-        public FailoverInvoiceCollection GetInvoices(int supplierId)
+        public IEnumerable<Invoice> GetInvoices(int supplierId)
         {
             var failoverInvoices = _failoverInvoiceRepository.GetBySupplier(supplierId);
             if (failoverInvoices?.Invoices is null or { Length: 0 })
             {
                 throw new EntityNotFoundException($"Failover invoices for supplier {supplierId} not found.");
             }
-            if (DateTime.UtcNow.AddMonths(_failoverInvoiceOptions.ValidBeforeMonthsOld) > failoverInvoices.Timestamp)
+            if (DateTime.UtcNow.AddMonths(-1 * _failoverInvoiceOptions.ValidBeforeMonthsOld) > failoverInvoices.Timestamp)
             {
                 throw new StaleFailoverInvoicesException($"Failover invoices for supplier {supplierId} are stale.");
             }
-            return failoverInvoices;
+            return failoverInvoices.Map(supplierId);
         }
     }
 }

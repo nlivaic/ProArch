@@ -1,5 +1,7 @@
 ﻿using ProArch.CodingTest.External;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ProArch.CodingTest.Invoices
 {
@@ -12,5 +14,13 @@ namespace ProArch.CodingTest.Invoices
         {
             this.Invoices = new ExternalInvoice[0];
         }
+
+        public IEnumerable<Invoice> Map(int supplierId) =>
+            Invoices.Select(i => new Invoice
+            {
+                Amount = i.TotalAmount,
+                InvoiceDate = new DateTime(i.Year, 1, 1),
+                SupplierId = supplierId
+            }).AsEnumerable();
     }
 }

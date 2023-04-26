@@ -1,9 +1,10 @@
 ﻿using ProArch.CodingTest.External;
+using System.Collections.Generic;
 
 namespace ProArch.CodingTest.Invoices.Service.External
 {
     public interface IExternalInvoiceService
     {
-        ExternalInvoice[] GetInvoices(string supplierId);
+        IEnumerable<Invoice> GetInvoices(string supplierId);
     }
 }

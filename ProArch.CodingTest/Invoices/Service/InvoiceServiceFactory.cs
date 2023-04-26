@@ -3,7 +3,7 @@ using ProArch.CodingTest.Suppliers;
 
 namespace ProArch.CodingTest.Invoices.Service
 {
-    public class InvoiceServiceFactory : IInvoiceServiceFactory
+    public class InvoiceServiceFactory
     {
         private readonly SupplierInvoiceService _supplierInvoiceService;
         private readonly ExternalSupplierInvoiceService _externalSupplierInvoiceService;
