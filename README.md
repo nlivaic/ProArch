@@ -5,14 +5,16 @@
 * External SDK is hidden behind an interface so we don't have a direct dependency on external code.
 * External service and failover have another class behind which they are hidden (`ExternalSupplierInvoiceService`). This class also should use Polly with a Circuit Breaker to handle resilience, but I didn't manage to get to it.
 * `FailoverInvoiceService` uses `FailoverInvoiceOptions` to know where is the cutoff for stale data. If it encounters stale data it throws.
-* A UML diagram is attached describing classes.
+* A basic class diagram with some annotations is attached.
+![2023-04-27 01_55_50-Excalidraw](https://user-images.githubusercontent.com/26722936/234727246-e8957bcc-13f8-4c56-9b64-ca56aebe109c.png)
+
+
 
 ## Unit tests
 
 * Tests rely heavily on various builders to manage complexity of arranging a test case.
 * I ran a test coverage analysis and have included the results below. Repositories haven't been covered at all, but those would need integration tests (Sqlite, EF Core in-memory provider or even Testcontainers).
 ![2023-04-27 01_35_39-CodingTest - Microsoft Visual Studio](https://user-images.githubusercontent.com/26722936/234726963-3e6f5eaf-71b1-4a61-ba67-d9e91c6095fc.png)
-
 
 ## Resilience
 
